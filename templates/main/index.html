@@ -1,21 +1,12 @@
 {% extends 'main/layout.html' %}
 {% load static %}
-{% block title %}Student- judge | Home{% endblock %}
+{% block title %}Home{% endblock %}
 
 
 {% block content%}
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex justify-content-center align-items-center">
-    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Learning Today,<br>Leading Tomorrow</h1>
-      <h2>We are team of talented making student with good knowledge.</h2>
-      <a href="#" class="btn-get-started">start Blog</a>
-    </div>
-  </section><!-- End Hero -->
+{% include 'main/slide.html' with slidedata=slide %}
 
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
+<!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
@@ -26,22 +17,14 @@
 
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-            <img src="{% static 'img/about.jpg'%}" class="img-fluid" alt="about image">
+            <img src="{{ About.image.url }}"style="height: 200px;width: 400px" class="img-fluid" alt="about image">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3>Deserving provide pleasure as a bodily pleasures is assumed.</h3>
+            <h3>{{ About.title}}</h3>
             <p class="font-italic">
-              staring
+              {{ About.description }}
             </p>
-            <ul>
-              <li><i class="icofont-check-circled"></i> write something</li>
-              <li><i class="icofont-check-circled"></i> write something</li>
-              <li><i class="icofont-check-circled"></i> write something</li>
-            </ul>
-            <p>
-              write something
-            </p>
-            <a href="{% url 'about' %}" class="learn-more-btn">Learn More</a>
+            <a href="{% url 'about'%}" class="learn-more-btn">Learn More</a>
           </div>
         </div>
 
@@ -203,5 +186,4 @@
 
       </div>
     </section><!-- End Trainers Section -->
-  </main><!-- End #main -->
 {% endblock %}

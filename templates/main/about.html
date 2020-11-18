@@ -1,6 +1,6 @@
 {% extends 'main/layout.html' %}
 {% load static %}
-{% block title %}Student- judge | About{% endblock %}
+{% block title %}About{% endblock %}
 {% block content%}
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
@@ -12,36 +12,23 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-            <img src="{% static 'img/about.jpg" class="img-fluid'%}" alt="about img">
-          </div>
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+                <img src="{{ About.image.url }}"style="height: 200px;width: 400px" class="img-fluid" alt="about image">
+            </div>
+
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3>Deserving provide pleasure as a bodily pleasures is assumed.</h3>
+            <h3>{{ About.title }}</h3>
             <p class="font-italic">
-              Starting
+                {{ About.description }}
             </p>
-            <ul>
-              <li><i class="icofont-check-circled"></i> write something</li>
-              <li><i class="icofont-check-circled"></i> write something</li>
-              <li><i class="icofont-check-circled"></i> write something</li>
-            </ul>
-            <p>
-                write something
-            </p>
-              <p>
-                write something
-            </p>
-              <p>
-                write something
-            </p>
-              <p>
-                write something
-            </p>
-
-
-
           </div>
         </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+
       </div>
 
     </section><!-- End About Section -->

@@ -7,13 +7,5 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/studentjudge</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="Django default" uuid="8120418b-80a4-41df-9917-f4380b098862">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/studentjudge/settings.py</remarks>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1:3306/studentjudge</jdbc-url>
-    </data-source>
   </component>
 </project>

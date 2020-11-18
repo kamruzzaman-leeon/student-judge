@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>{% block title %}{% endblock %}</title>
+  <title>Student- judge | {% block title %}{% endblock %}</title>
 
 
   <!-- Favicons -->
@@ -40,9 +40,9 @@
 
 
 
-      <nav class="navbar-dark nav-menu d-none d-lg-block">
+      <nav class="navbar-dark  nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'index' %}">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
             <li class="drop-down"><a href="">Video</a>
             <ul>
@@ -86,9 +86,12 @@
     </div>
   </header><!-- End Header -->
 
-{% block content %}
+ <main id="main">
 
-{% endblock %}
+    {% block content %}
+
+     {% endblock %}
+  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
