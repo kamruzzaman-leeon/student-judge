@@ -1,0 +1,36 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+
+
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+
+    <h1 class="text-center text-uppercase">Blogs</h1><hr>
+    </div>
+    <div class="container">
+    {% for b in blog %}
+            <div class="card">
+
+            <div class="card-body">
+                <h4 class="card-title">{{b.title }}</h4>
+                    {{ b.content }}
+
+
+                    <a href="blog_detail/{{ b.id }}">......read more</a>
+             </div>
+                <div class="card-footer text-muted">
+
+                    <cite title="Source Title"> Class: {{ b.Class }} | Subject: {{ b.subject }} | Chapter: {{ b.chapter }} | By {{ b.author }} | {{ b.created }}</cite>
+                    <br>
+                </div>
+            </div>
+         <br>
+    {% endfor %}
+    </div>
+{% endblock %}
