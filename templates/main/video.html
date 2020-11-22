@@ -1,0 +1,37 @@
+{% extends 'main/layout.html' %}
+
+{% load embed_video_tags %}
+{% load static %}
+{% block title %}Video{% endblock %}
+
+{% block content %}
+
+    <div class="jumbotron">
+    <hr>
+    <h1 class="text-center text-uppercase">videos</h1>
+    </div>
+
+    <div class="container">
+
+
+    <div class="col-md-6 text-center">
+    {% for b in video %}
+        <div class="card" style="width: 30rem">
+            {% video b.video %}<br>
+            <div class="card-body ">
+                <p>{{ b.title }}</p><hr>
+       <cite title="Source Title"> Class: {{ b.Class }} | Subject: {{ b.subject }} | Chapter: {{ b.chapter }} <br> By {{ b.author }} | {{ b.created }}</cite>
+      </div>
+</div>
+
+
+
+    {% endfor %}
+    </div>
+    </div>
+
+
+
+
+
+{% endblock %}
