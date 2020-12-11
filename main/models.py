@@ -24,7 +24,7 @@ class Video(models.Model):
     title = models.CharField(max_length=100, blank=False)
     video = EmbedVideoField()
     class_choice = (
-        ('', '---'),
+
         ('1', '1'),
         ('2', '2'),
         ('3', '3'),
@@ -53,7 +53,6 @@ class Blog(models.Model):
     content = models.CharField(max_length=500)
     blog = models.TextField(blank=False)
     class_choice = (
-        ('', '---'),
         ('1', '1'),
         ('2', '2'),
         ('3', '3'),

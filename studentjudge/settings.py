@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
     'embed_video',
+    'django_filters',
+    'widget_tweaks',
 
 ]
 

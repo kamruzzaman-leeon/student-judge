@@ -1,5 +1,4 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 
 from .models import *
@@ -9,6 +8,8 @@ from django.contrib.auth import authenticate,login,logout
 
 from django.contrib.auth.decorators import login_required
 
+from .filters import BlogFilter,VideoFilter
+
 def registerPage(request):
     if request.user.is_authenticated:
         return redirect('index')
@@ -16,7 +17,7 @@ def registerPage(request):
         form =CreateUserForm()
 
 
-        if request.method=='POST':
+        if request.method =='POST':
             form=CreateUserForm(request.POST)
             if form.is_valid():
                 form.save()
@@ -73,25 +74,31 @@ def about(request):
     return render(request,"main/about.html",context)
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def video(request):
     videodata=Video.objects.all()
+    myvideoFilter = VideoFilter(request.GET,queryset=videodata)
+    videodata = myvideoFilter.qs
     context={
         'video':videodata,
+        'myvideoFilter':myvideoFilter
     }
     return render(request,"main/video.html",context)
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def blog(request):
     blogdata=Blog.objects.all()
+    myFilter = BlogFilter(request.GET,queryset=blogdata)
+    blogdata=myFilter.qs
     context={
      'blog':blogdata,
+     'myFilter': myFilter,
     }
     return render(request,"main/blog.html",context)
 
 
-@login_required(login_url='login')
+#@login_required(login_url='login')
 def blog_detail(request,id):
     blogs = Blog.objects.get(id=id)
     return render(request,'main/blog_detail.html',{'blog':blogs})
