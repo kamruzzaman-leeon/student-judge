@@ -1,0 +1,30 @@
+{% extends 'main/layout.html' %}
+{% load crispy_forms_filters %}
+
+{% block title %}Edit Blog{% endblock title %}
+{% block content %}
+    <br>
+    <br>
+    <br>
+<center>
+<div class="container" >
+
+        <div class="row">
+            <div class="col">
+
+        <div style="padding: 40px 20px 20px;border-radius: 15px" class="col-md-6 card shadow-lg">
+            <h3  class="readonly">Blog Infromation</h3>
+        <form action="{% url 'edit_blog' blogid %}" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-success ">Save</button>
+            <button type="submit" class="btn btn-info"><a href="{% url 'teacherBlogSection' %}"></a>Cancel </button>
+
+    </form>
+        </div>
+
+    </div>
+</div>
+</div>
+</center>
+{% endblock content %}

@@ -1,0 +1,67 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+
+
+{% load widget_tweaks %}
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <h1 class="text-center text-uppercase">Blogs</h1><hr>
+    </div>
+    <div class="container text-center card card-body">
+            <form method="get">
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        {{ myFilter.form.Class.label_tag}}
+                        {% render_field myFilter.form.Class class="form-control" %}
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        {{ myFilter.form.subject.label_tag}}
+                        {% render_field myFilter.form.subject class="form-control" %}
+                    </div>
+
+
+                    <div class="form-group col-md-6">
+                        {{ myFilter.form.chapter.label_tag}}
+                        {% render_field myFilter.form.chapter class="form-control" %}
+                    </div>
+
+                     <div class="form-group col-md-6">
+                        {{ myFilter.form.title.label_tag}}
+                        {% render_field myFilter.form.title class="form-control" %}
+                    </div>
+                </div>
+                    <div class="col text-center"> <button class="btn btn-primary center" type="submit">Search</button>
+                        <button class="btn btn-danger center" type="reset">Reset</button>
+                   </div>
+            </form>
+    </div>
+    <br>
+
+    <div class="container">
+    {% for b in myFilter.qs %}
+            <div class="card">
+
+            <div class="card-body">
+                <h4 class="card-title">{{b.title }}</h4>
+                    {{ b.short_description }}
+
+
+                    <a href="{% url 'blog_detail' b.id %}">read more</a>
+             </div>
+                <div class="card-footer text-muted">
+
+                    <cite title="Source Title"> Class: {{ b.Class }} | Subject: {{ b.subject }} | Chapter: {{ b.chapter }} | By {{ b.author }} | {{ b.created }}</cite>
+                    <br>
+                </div>
+            </div>
+         <br>
+    {% endfor %}
+    </div>
+{% endblock %}

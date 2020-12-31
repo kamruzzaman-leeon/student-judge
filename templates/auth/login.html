@@ -1,0 +1,30 @@
+{% extends 'main/layout.html' %}
+{% load crispy_forms_filters %}
+
+{% block title %}login{% endblock title %}
+{% block content %}
+    <br>
+    <br>
+    <br>
+<center>
+<div class="container" >
+
+        <div class="row">
+            <div class="col">
+
+         <h4>ACCOUNT LOGIN</h4><br>
+        <div style="padding: 40px 20px 20px;border-radius: 15px" class="col-md-6 card shadow-lg">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <a href="{% url 'reset_password' %}" class="float-lg-right">Reset Password</a>
+        <br>
+        <button style="border-radius:15px" type="submit" class="btn btn-primary">Login</button>
+    </form>
+        </div>
+
+    </div>
+</div>
+</div>
+</center>
+{% endblock content %}

@@ -1,0 +1,185 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+
+{% block content%}
+{% include 'main/slide.html' with slidedata=slide %}
+
+<!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <p>About Us</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src="{{ About.image.url }}" style="height: 400px;width: 900px" class="img-fluid" alt="about image">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3>{{ About.title}}</h3>
+            <p class="font-italic">
+              {{ About.description }}
+            </p>
+            <a href="{% url 'about'%}" class="learn-more-btn bx-flashing">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts section-bg">
+      <div class="container">
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">{{ Studentcount}}</span>
+            <p>Students</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">{{ videocount}}</span>
+            <p>video</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">{{ blogcount}}</span>
+            <p>Blog</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">{{ teachercount }}</span>
+            <p>Teacher</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="content">
+              <h3>Why Choose Student-Judge?</h3>
+              <p>
+                explain the reason
+              </p>
+              <div class="text-center">
+                <a href="{% url 'about' %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-receipt"></i>
+                    <h4>keyword</h4>
+                    <p>explain</p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-cube-alt"></i>
+                    <h4>keyword</h4>
+                    <p>explain</p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-images"></i>
+                    <h4>keyword</h4>
+                    <p>explain</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-3 col-md-4">
+            <div class="icon-box">
+              <i class="icofont-video-clapper" style="color: #ffbb2c;"></i>
+              <h3><a href="">video</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="icofont-blogger" style="color: #5578ff;"></i>
+              <h3><a href="">Blog</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="icofont-file-text" style="color: #e80368;"></i>
+              <h3><a href="">examination</a></h3>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+
+    <!-- ======= Trainers Section ======= -->
+    <section id="trainers" class="trainers">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Teachers</h2>
+          <p>Our Professional teachers</p>
+        </div>
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+
+           <div class="col-lg-4 col-md-6 d-flex align-items-stretch bx-fade-down-hover">
+               {% for i in teacherdata %}
+            <div class="member">
+              <div class="card-img">
+                  <img src="{{ i.ProfilePicture.url }}" class="img-fluid">
+                   </div>
+              <div class="member-content">
+
+                <h4>{{ i.user.get_full_name }}</h4>
+                <span>specialist</span>
+                  <h5>{{ i.specialist }}</h5>
+                <p>
+                    {{ i.quota }}
+                </p>
+                  {{ endfor }}
+                <div class="social">
+                  <a href=""><i class="icofont-twitter"></i></a>
+                  <a href=""><i class="icofont-facebook"></i></a>
+                  <a href=""><i class="icofont-instagram"></i></a>
+                  <a href=""><i class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            {% endfor %}
+
+        </div>
+
+      </div>
+    </section><!-- End Trainers Section -->
+    {% include 'main/footer.html'%}
+{% endblock %}

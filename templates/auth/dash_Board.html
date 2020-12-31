@@ -1,0 +1,50 @@
+{% extends 'main/layout.html' %}
+
+{% load crispy_forms_filters %}
+{% load static %}
+{% block title %}DashBoard{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<br>
+{% if user.profile.isTeacher == 1 %}
+<div>
+{#--------------------------------------Video Section--------------------------------------#}
+<center>
+<div class="container" >
+<h2 class="text-center text-capitalize">Please select from below...</h2><br><br>
+        <div class="row">
+
+            <div class="col-md-6">
+                <div style="padding: 40px 20px 20px;border-radius: 15px" class="col-md-6 card shadow-lg bg-dark bx-fade-down-hover">
+                    <h1>
+                        <a href="{%url 'teacherVideoSection' %}" class="text-white">Video Section</a>
+                    </h1>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div style="padding: 40px 20px 20px;border-radius: 15px" class=" col-md-6 card shadow-lg bg-dark bx-fade-down-hover">
+                    <h1>
+                        <a href="{%url 'teacherBlogSection' %}" class="text-white">Blog Section</a>
+                    </h1>
+                </div>
+            </div>
+</div>
+</div>
+</center>
+{#--------------------------------------Blog Section--------------------------------------#}
+
+
+</div>
+{% elif user.profile.isTeacher == 0 %}
+        <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Student</p>
+                     </div>
+                </div>
+        </div>
+{% endif %}
+
+{% endblock content %}

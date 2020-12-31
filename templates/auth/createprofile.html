@@ -1,0 +1,208 @@
+{% extends 'main/layout.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+     <br>
+    <br>
+    <br>
+<center>
+{#teacher section#}
+ {% if user.profile.isTeacher == 1 %}
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Edit ACCOUNT</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="row text-center">
+            <div class="col">
+                <h2>{{ user.username }}</h2><br>
+                 <div class="container">
+                    <form class="card-body" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                         
+                        {{ form2|crispy }}
+                        {{ form|crispy }}
+
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="reset" class="btn btn-danger">reset</button>
+                        <br>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+  </div>
+</div>
+     <br>
+     <br>
+     <br>
+<div class="container">
+<center>
+    <div class=" row">
+        <div class="col">
+
+            <div class="card col-md-8 shadow-lg" style="padding: 50px; border-radius: 10px">
+               <div class="card-body">
+                   <h2> View Profile</h2><hr>
+                   <div class="card-img">
+                           <img src="{{ user.profile.ProfilePicture.url }}" class="img-fluid" height="175px" width="150px">
+                   </div>
+                   <br>
+                   <table class="table table-bordered">
+                       <tbody>
+                           <tr>
+                               <th>User Name</th>
+                               <td>{{ user.username }}</td>
+                           </tr>
+                           <tr>
+                               <th>Email</th>
+                               <td>{{ user.email }}</td>
+                           </tr>
+                           <tr>
+                               <th>First Name</th>
+                               <td>{{ user.first_name}}</td>
+                           </tr>
+                           <tr>
+                               <th>Last Name</th>
+                               <td>{{ user.last_name}}</td>
+                           </tr>
+                           <tr>
+                               <th>Addrress</th>
+                               <td>{{ user.profile.Address}}</td>
+                           </tr>
+                           <tr>
+                               <th>Contact Number</th>
+                               <td>{{ user.profile.ContactNumber }}</td>
+                           </tr>
+                           <tr>
+                               <th>Specialist</th>
+                               <td>{{ user.profile.specialist }}</td>
+                           </tr>
+                           <tr>
+                               <th>Quota</th>
+                               <td><em>{{ user.profile.quota}}</em></td>
+                           </tr>
+                       </tbody>
+                   </table>
+                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Edit profile</button>
+               </div>
+
+            </div>
+
+        </div>
+    </div>
+</center>
+</div>
+{#     endteacher section#}
+{#     student section start#}
+     {% else %}
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Edit ACCOUNT</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="row text-center">
+            <div class="col">
+                <h2>{{ user.username }}</h2><br>
+                 <div class="container">
+                    <form class="card-body" method="POST">
+                        {% csrf_token %}
+                        {{ form2|crispy }}
+                        {{ form|crispy }}
+
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <br>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+  </div>
+</div>
+     <br>
+     <br>
+     <br>
+<div class="container">
+<center>
+    <div class=" row">
+        <div class="col">
+
+            <div class="card col-md-8 shadow-lg" style="padding: 50px; border-radius: 10px">
+               <div class="card-body">
+                   <h2> View Profile</h2><hr>
+                   <div class="card-img">
+                           <img src="{{ user.profile.ProfilePicture.url }}" class="img-fluid" height="175px" width="150px">
+                   </div>
+                   <br>
+                   <table class="table table-bordered">
+                       <tbody>
+                           <tr>
+                               <th>User Name</th>
+                               <td>{{ user.username }}</td>
+                           </tr>
+                           <tr>
+                               <th>Email</th>
+                               <td>{{ user.email }}</td>
+                           </tr>
+                           <tr>
+                               <th>First Name</th>
+                               <td>{{ user.first_name}}</td>
+                           </tr>
+                           <tr>
+                               <th>Last Name</th>
+                               <td>{{ user.last_name}}</td>
+                           </tr>
+
+                           <tr>
+                               <th>Institute</th>
+                               <td>{{ user.profile.Institute }}</td>
+                           </tr>
+                           <tr>
+                               <th>Class</th>
+                               <td><em>{{ user.profile.Class}}</em></td>
+                           </tr>
+
+                           <tr>
+                               <th>Contact Number</th>
+                               <td>{{ user.profile.ContactNumber }}</td>
+                           </tr>
+                            <tr>
+                               <th>Addrress</th>
+                               <td>{{ user.profile.Address}}</td>
+                           </tr>
+                       </tbody>
+                   </table>
+                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Edit profile</button>
+               </div>
+
+            </div>
+
+        </div>
+    </div>
+</center>
+</div>
+{% endif %}
+</center>
+{% endblock content %}

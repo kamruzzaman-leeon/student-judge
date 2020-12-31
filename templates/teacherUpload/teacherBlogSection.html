@@ -1,0 +1,97 @@
+{% extends 'main/layout.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% block title %}teacher Blog Section{% endblock %}
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+<div >
+     <div class="container-lg">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover bg-white text-center">
+                <div class="toast-header bg-dark text-white pt-2">
+                    <div class='col-md-6'><h4>Total number of Blog: <span data-toggle="counter-up">{{ blogcount}}</span></h4></div>
+                    <div class='text-right col-md-6'><h4><span>Number of Page: {{ blogpage.number }}</span></h4></div>
+                </div>
+                <div class="toast-header bg-dark text-white pt-2">
+
+                    <div class="col-md-6">
+                        <h1>Blog <b>Section</b></h1>
+                    </div>
+                    <div class="text-right col-md-6">
+                        <a href="#addBlogModal" class="btn btn-success" data-toggle="modal"><i class='bx bx-pencil' ></i><span> Add New Blog</span></a>
+                    </div>
+                </div>
+
+                <thead class="bg-dark text-white">
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Class</th>
+                        <th>Subject</th>
+                        <th>Chapter</th>
+                        <th>Blog</th>
+                        <th>created</th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for i in blogpage.object_list %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{ i.title }}</td>
+                        <td>{{ i.Class }}</td>
+                        <td>{{ i.subject }}</td>
+                        <td>{{ i.chapter }}</td>
+                        <td>{{ i.short_description }}</td>
+                        <td>{{ i.created }}</td>
+                        <td><a href="{% url 'edit_blog' i.id %}" class="btn btn-outline-info" ><i class='bx bx-pencil'>Edit</i></a></td>
+                       <td><a href="{% url 'delete_blog' i.id%}" class="btn btn-outline-danger"><i class='bx bxs-x-square'>Delete</i></a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+     <div class="page-link text-center">
+            {% if videopage.has_previous %}
+                <a href="{% url 'teacherBlogSection' %}?blogpage={{ blogpage.previous_page_number }} "><< Previous Page</a>
+            {% endif %}
+            {% if videopage.has_next %}
+                    <a href="{% url 'teacherBlogSection' %}?blogpage={{ blogpage.next_page_number}} ">Next Page >></a>
+            {% endif %}
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+{#    addblog#}
+    <div id="addBlogModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Add Blog</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <form action="" method="post">
+                    <div class="modal-body">
+
+                         {% csrf_token %}
+                         {{ form|crispy }}
+
+                    </div>
+                    <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-success" value="Add">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends 'main/layout.html' %}
+{% load crispy_forms_filters %}
+
+{% block title %}Delete Video{% endblock title %}
+{% block content %}
+    <br>
+    <br>
+    <br>
+<center>
+<div class="container" >
+
+        <div class="row">
+            <div class="col">
+
+         <h4>Video Delete</h4><br>
+        <div style="padding: 40px 20px 20px;border-radius: 15px" class="col-md-6 card shadow-lg">
+            <p>Are you sure you want to delete <strong>"{{video.title}}"?</strong></p>
+        <form action="{% url 'delete_video' video.id %}" method="post">
+            {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <button type="submit" class="btn btn-info"><a href="{% url 'teacherVideoSection' %}"></a>Cancel </button>
+
+        </form>
+        </div>
+
+    </div>
+</div>
+</div>
+</center>
+{% endblock content %}>
