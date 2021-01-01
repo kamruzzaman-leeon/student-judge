@@ -1,7 +1,11 @@
 import os
-from decouple import config
 from pathlib import Path
 from django.contrib.messages import constants as messages
+import django_heroku
+
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
@@ -19,12 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = '-!rgf*9^q5^is%#q)z*-6_ygji!s@9@190j^*&%071n&)6hx&t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool, default=False)
+DEBUG =False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1',]
 
 # Application definition
 
@@ -83,10 +87,10 @@ WSGI_APPLICATION = 'studentjudge.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('db'),
-        'USER': config('db_user'),
-        'PASSWORD': config('db_pass'),
-        'HOST': config('HOST'),
+        'NAME': 'studentjudge',
+        'USER': 'root',
+        'PASSWORD': '799950',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
@@ -125,6 +129,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
@@ -139,6 +148,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = 'studentjudge411@gmail.com'
+EMAIL_HOST_PASSWORD = 'cse411ewu'
 DEFAULT_FROM_EMAIL = 'student-judge Team <no-replay@studentjudge.com>'
