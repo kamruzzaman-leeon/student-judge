@@ -1,0 +1,1 @@
+web: gunicorn studentjudge.wsgi --log-file -
