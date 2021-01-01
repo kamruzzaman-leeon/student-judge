@@ -1,11 +1,10 @@
 import os
 from pathlib import Path
 from django.contrib.messages import constants as messages
-import django_heroku
 
 
-# Activate Django-Heroku.
-django_heroku.settings(locals())
+
+
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
@@ -132,7 +131,7 @@ USE_TZ = True
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
