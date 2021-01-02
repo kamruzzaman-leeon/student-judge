@@ -21,9 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '-!rgf*9^q5^is%#q)z*-6_ygji!s@9@190j^*&%071n&)6hx&t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [' 'studentjudge.zeet.app'']
 
 # Application definition
 
