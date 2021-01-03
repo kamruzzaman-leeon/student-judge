@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `studentjudge` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `studentjudge`;
 -- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
 -- Host: localhost    Database: studentjudge
@@ -118,7 +116,7 @@ CREATE TABLE `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,7 +125,7 @@ CREATE TABLE `auth_permission` (
 
 LOCK TABLES `auth_permission` WRITE;
 /*!40000 ALTER TABLE `auth_permission` DISABLE KEYS */;
-INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can view log entry',1,'view_logentry'),(5,'Can add permission',2,'add_permission'),(6,'Can change permission',2,'change_permission'),(7,'Can delete permission',2,'delete_permission'),(8,'Can view permission',2,'view_permission'),(9,'Can add group',3,'add_group'),(10,'Can change group',3,'change_group'),(11,'Can delete group',3,'delete_group'),(12,'Can view group',3,'view_group'),(13,'Can add user',4,'add_user'),(14,'Can change user',4,'change_user'),(15,'Can delete user',4,'delete_user'),(16,'Can view user',4,'view_user'),(17,'Can add content type',5,'add_contenttype'),(18,'Can change content type',5,'change_contenttype'),(19,'Can delete content type',5,'delete_contenttype'),(20,'Can view content type',5,'view_contenttype'),(21,'Can add session',6,'add_session'),(22,'Can change session',6,'change_session'),(23,'Can delete session',6,'delete_session'),(24,'Can view session',6,'view_session'),(25,'Can add about',7,'add_about'),(26,'Can change about',7,'change_about'),(27,'Can delete about',7,'delete_about'),(28,'Can view about',7,'view_about'),(29,'Can add blog',8,'add_blog'),(30,'Can change blog',8,'change_blog'),(31,'Can delete blog',8,'delete_blog'),(32,'Can view blog',8,'view_blog'),(33,'Can add slide',9,'add_slide'),(34,'Can change slide',9,'change_slide'),(35,'Can delete slide',9,'delete_slide'),(36,'Can view slide',9,'view_slide'),(37,'Can add video',10,'add_video'),(38,'Can change video',10,'change_video'),(39,'Can delete video',10,'delete_video'),(40,'Can view video',10,'view_video'),(41,'Can add profile',11,'add_profile'),(42,'Can change profile',11,'change_profile'),(43,'Can delete profile',11,'delete_profile'),(44,'Can view profile',11,'view_profile');
+INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can view log entry',1,'view_logentry'),(5,'Can add permission',2,'add_permission'),(6,'Can change permission',2,'change_permission'),(7,'Can delete permission',2,'delete_permission'),(8,'Can view permission',2,'view_permission'),(9,'Can add group',3,'add_group'),(10,'Can change group',3,'change_group'),(11,'Can delete group',3,'delete_group'),(12,'Can view group',3,'view_group'),(13,'Can add user',4,'add_user'),(14,'Can change user',4,'change_user'),(15,'Can delete user',4,'delete_user'),(16,'Can view user',4,'view_user'),(17,'Can add content type',5,'add_contenttype'),(18,'Can change content type',5,'change_contenttype'),(19,'Can delete content type',5,'delete_contenttype'),(20,'Can view content type',5,'view_contenttype'),(21,'Can add session',6,'add_session'),(22,'Can change session',6,'change_session'),(23,'Can delete session',6,'delete_session'),(24,'Can view session',6,'view_session'),(25,'Can add about',7,'add_about'),(26,'Can change about',7,'change_about'),(27,'Can delete about',7,'delete_about'),(28,'Can view about',7,'view_about'),(29,'Can add blog',8,'add_blog'),(30,'Can change blog',8,'change_blog'),(31,'Can delete blog',8,'delete_blog'),(32,'Can view blog',8,'view_blog'),(33,'Can add slide',9,'add_slide'),(34,'Can change slide',9,'change_slide'),(35,'Can delete slide',9,'delete_slide'),(36,'Can view slide',9,'view_slide'),(37,'Can add video',10,'add_video'),(38,'Can change video',10,'change_video'),(39,'Can delete video',10,'delete_video'),(40,'Can view video',10,'view_video'),(41,'Can add profile',11,'add_profile'),(42,'Can change profile',11,'change_profile'),(43,'Can delete profile',11,'delete_profile'),(44,'Can view profile',11,'view_profile'),(45,'Can add question',12,'add_question'),(46,'Can change question',12,'change_question'),(47,'Can delete question',12,'delete_question'),(48,'Can view question',12,'view_question');
 /*!40000 ALTER TABLE `auth_permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +159,7 @@ CREATE TABLE `auth_user` (
 
 LOCK TABLES `auth_user` WRITE;
 /*!40000 ALTER TABLE `auth_user` DISABLE KEYS */;
-INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$216000$H8EHRA4YeJhO$zjy62AAZHpZlpLtpaRFrB6hfsXqvRosce03+Gh6jvjI=','2020-12-31 14:07:26.683998',1,'admin','','','studentjudge411@gmail.com',1,1,'2020-12-31 14:06:53.316467'),(3,'pbkdf2_sha256$216000$yQLrE25HQQNp$H4fZLV3ktboQYJFVDVoCR7zf9P2QuXdUI4C+PHzrDsk=','2020-12-31 14:53:41.453872',0,'leeon','kamruzzaman','leeon','leeon.ewubd@gmail.com',0,1,'2020-12-31 14:52:44.433991');
+INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$216000$H8EHRA4YeJhO$zjy62AAZHpZlpLtpaRFrB6hfsXqvRosce03+Gh6jvjI=','2020-12-31 14:07:26.683998',1,'admin','','','studentjudge411@gmail.com',1,1,'2020-12-31 14:06:53.316467'),(3,'pbkdf2_sha256$216000$yQLrE25HQQNp$H4fZLV3ktboQYJFVDVoCR7zf9P2QuXdUI4C+PHzrDsk=','2021-01-03 14:43:47.703603',0,'leeon','kamruzzaman','leeon','leeon.ewubd@gmail.com',0,1,'2020-12-31 14:52:44.433991');
 /*!40000 ALTER TABLE `auth_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -243,7 +241,7 @@ CREATE TABLE `django_admin_log` (
   CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
   CONSTRAINT `django_admin_log_chk_1` CHECK ((`action_flag` >= 0))
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -252,7 +250,7 @@ CREATE TABLE `django_admin_log` (
 
 LOCK TABLES `django_admin_log` WRITE;
 /*!40000 ALTER TABLE `django_admin_log` DISABLE KEYS */;
-INSERT INTO `django_admin_log` VALUES (1,'2020-12-31 14:24:07.361126','1','Student Judge Gem',1,'[{\"added\": {}}]',7,1),(2,'2020-12-31 14:24:13.506388','1','Student Judge Gem',2,'[{\"changed\": {\"fields\": [\"Active\"]}}]',7,1),(3,'2020-12-31 14:25:40.003548','1','Student Judge Gem',2,'[{\"changed\": {\"fields\": [\"Description\"]}}]',7,1),(4,'2020-12-31 14:32:00.899419','1','Student Judge',2,'[{\"changed\": {\"fields\": [\"Title\"]}}]',7,1),(5,'2020-12-31 14:32:12.690678','1','Student Judge',2,'[]',7,1),(6,'2020-12-31 14:33:36.624927','1','Welcome to Student judge',1,'[{\"added\": {}}]',9,1),(7,'2020-12-31 14:33:51.539989','1','Welcome to Student judge',2,'[{\"changed\": {\"fields\": [\"Description\", \"Active\"]}}]',9,1),(8,'2020-12-31 14:35:45.063924','1','Welcome to Student judge',2,'[{\"changed\": {\"fields\": [\"Image\"]}}]',9,1),(9,'2020-12-31 14:40:40.927019','2','Learning Today, Leading Tomorrow',1,'[{\"added\": {}}]',9,1),(10,'2020-12-31 14:43:30.750211','1','Welcome to Student judge',3,'',9,1),(11,'2020-12-31 14:43:36.721780','2','Learning Today, Leading Tomorrow',3,'',9,1),(12,'2020-12-31 14:44:05.590124','3','Welcome to Student judge',1,'[{\"added\": {}}]',9,1),(13,'2020-12-31 14:44:40.936921','4','Learning Today, Leading Tomorrow',1,'[{\"added\": {}}]',9,1),(14,'2020-12-31 14:45:12.160090','5','Famous Quota',1,'[{\"added\": {}}]',9,1),(15,'2020-12-31 14:45:45.248816','6','Life is Easy. Why Do We Make It So Hard?',1,'[{\"added\": {}}]',9,1),(16,'2020-12-31 14:45:50.718689','6','Life is Easy. Why Do We Make It So Hard?',2,'[{\"changed\": {\"fields\": [\"Active\"]}}]',9,1),(17,'2020-12-31 14:52:16.239325','2','leeon',3,'',4,1);
+INSERT INTO `django_admin_log` VALUES (1,'2020-12-31 14:24:07.361126','1','Student Judge Gem',1,'[{\"added\": {}}]',7,1),(2,'2020-12-31 14:24:13.506388','1','Student Judge Gem',2,'[{\"changed\": {\"fields\": [\"Active\"]}}]',7,1),(3,'2020-12-31 14:25:40.003548','1','Student Judge Gem',2,'[{\"changed\": {\"fields\": [\"Description\"]}}]',7,1),(4,'2020-12-31 14:32:00.899419','1','Student Judge',2,'[{\"changed\": {\"fields\": [\"Title\"]}}]',7,1),(5,'2020-12-31 14:32:12.690678','1','Student Judge',2,'[]',7,1),(6,'2020-12-31 14:33:36.624927','1','Welcome to Student judge',1,'[{\"added\": {}}]',9,1),(7,'2020-12-31 14:33:51.539989','1','Welcome to Student judge',2,'[{\"changed\": {\"fields\": [\"Description\", \"Active\"]}}]',9,1),(8,'2020-12-31 14:35:45.063924','1','Welcome to Student judge',2,'[{\"changed\": {\"fields\": [\"Image\"]}}]',9,1),(9,'2020-12-31 14:40:40.927019','2','Learning Today, Leading Tomorrow',1,'[{\"added\": {}}]',9,1),(10,'2020-12-31 14:43:30.750211','1','Welcome to Student judge',3,'',9,1),(11,'2020-12-31 14:43:36.721780','2','Learning Today, Leading Tomorrow',3,'',9,1),(12,'2020-12-31 14:44:05.590124','3','Welcome to Student judge',1,'[{\"added\": {}}]',9,1),(13,'2020-12-31 14:44:40.936921','4','Learning Today, Leading Tomorrow',1,'[{\"added\": {}}]',9,1),(14,'2020-12-31 14:45:12.160090','5','Famous Quota',1,'[{\"added\": {}}]',9,1),(15,'2020-12-31 14:45:45.248816','6','Life is Easy. Why Do We Make It So Hard?',1,'[{\"added\": {}}]',9,1),(16,'2020-12-31 14:45:50.718689','6','Life is Easy. Why Do We Make It So Hard?',2,'[{\"changed\": {\"fields\": [\"Active\"]}}]',9,1),(17,'2020-12-31 14:52:16.239325','2','leeon',3,'',4,1),(18,'2021-01-03 15:20:40.106913','1','trail',1,'[{\"added\": {}}]',12,1);
 /*!40000 ALTER TABLE `django_admin_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -269,7 +267,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -278,7 +276,7 @@ CREATE TABLE `django_content_type` (
 
 LOCK TABLES `django_content_type` WRITE;
 /*!40000 ALTER TABLE `django_content_type` DISABLE KEYS */;
-INSERT INTO `django_content_type` VALUES (11,'accounts','profile'),(1,'admin','logentry'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(5,'contenttypes','contenttype'),(7,'main','about'),(8,'main','blog'),(9,'main','slide'),(10,'main','video'),(6,'sessions','session');
+INSERT INTO `django_content_type` VALUES (11,'accounts','profile'),(1,'admin','logentry'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(5,'contenttypes','contenttype'),(12,'examination','question'),(7,'main','about'),(8,'main','blog'),(9,'main','slide'),(10,'main','video'),(6,'sessions','session');
 /*!40000 ALTER TABLE `django_content_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -295,7 +293,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -304,7 +302,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2020-12-31 14:01:55.224685'),(2,'auth','0001_initial','2020-12-31 14:01:58.597234'),(3,'accounts','0001_initial','2020-12-31 14:02:40.256232'),(4,'accounts','0002_auto_20201231_2001','2020-12-31 14:03:17.456829'),(5,'admin','0001_initial','2020-12-31 14:03:18.869156'),(6,'admin','0002_logentry_remove_auto_add','2020-12-31 14:03:23.858423'),(7,'admin','0003_logentry_add_action_flag_choices','2020-12-31 14:03:23.920921'),(8,'contenttypes','0002_remove_content_type_name','2020-12-31 14:03:30.863621'),(9,'auth','0002_alter_permission_name_max_length','2020-12-31 14:03:37.440914'),(10,'auth','0003_alter_user_email_max_length','2020-12-31 14:03:37.987759'),(11,'auth','0004_alter_user_username_opts','2020-12-31 14:03:38.065872'),(12,'auth','0005_alter_user_last_login_null','2020-12-31 14:03:41.142702'),(13,'auth','0006_require_contenttypes_0002','2020-12-31 14:03:41.443545'),(14,'auth','0007_alter_validators_add_error_messages','2020-12-31 14:03:41.718390'),(15,'auth','0008_alter_user_username_max_length','2020-12-31 14:03:44.550398'),(16,'auth','0009_alter_user_last_name_max_length','2020-12-31 14:03:47.144010'),(17,'auth','0010_alter_group_name_max_length','2020-12-31 14:03:47.940825'),(18,'auth','0011_update_proxy_permissions','2020-12-31 14:03:48.050182'),(19,'auth','0012_alter_user_first_name_max_length','2020-12-31 14:03:54.996962'),(20,'main','0001_initial','2020-12-31 14:04:00.353600'),(21,'main','0002_auto_20201231_2001','2020-12-31 14:04:21.255803'),(22,'sessions','0001_initial','2020-12-31 14:04:22.427586'),(23,'main','0003_slide_active','2020-12-31 14:26:56.135267');
+INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2020-12-31 14:01:55.224685'),(2,'auth','0001_initial','2020-12-31 14:01:58.597234'),(3,'accounts','0001_initial','2020-12-31 14:02:40.256232'),(4,'accounts','0002_auto_20201231_2001','2020-12-31 14:03:17.456829'),(5,'admin','0001_initial','2020-12-31 14:03:18.869156'),(6,'admin','0002_logentry_remove_auto_add','2020-12-31 14:03:23.858423'),(7,'admin','0003_logentry_add_action_flag_choices','2020-12-31 14:03:23.920921'),(8,'contenttypes','0002_remove_content_type_name','2020-12-31 14:03:30.863621'),(9,'auth','0002_alter_permission_name_max_length','2020-12-31 14:03:37.440914'),(10,'auth','0003_alter_user_email_max_length','2020-12-31 14:03:37.987759'),(11,'auth','0004_alter_user_username_opts','2020-12-31 14:03:38.065872'),(12,'auth','0005_alter_user_last_login_null','2020-12-31 14:03:41.142702'),(13,'auth','0006_require_contenttypes_0002','2020-12-31 14:03:41.443545'),(14,'auth','0007_alter_validators_add_error_messages','2020-12-31 14:03:41.718390'),(15,'auth','0008_alter_user_username_max_length','2020-12-31 14:03:44.550398'),(16,'auth','0009_alter_user_last_name_max_length','2020-12-31 14:03:47.144010'),(17,'auth','0010_alter_group_name_max_length','2020-12-31 14:03:47.940825'),(18,'auth','0011_update_proxy_permissions','2020-12-31 14:03:48.050182'),(19,'auth','0012_alter_user_first_name_max_length','2020-12-31 14:03:54.996962'),(20,'main','0001_initial','2020-12-31 14:04:00.353600'),(21,'main','0002_auto_20201231_2001','2020-12-31 14:04:21.255803'),(22,'sessions','0001_initial','2020-12-31 14:04:22.427586'),(23,'main','0003_slide_active','2020-12-31 14:26:56.135267'),(24,'examination','0001_initial','2021-01-03 14:21:51.146188'),(25,'examination','0002_auto_20210103_2046','2021-01-03 14:46:16.083601'),(26,'examination','0003_auto_20210103_2047','2021-01-03 14:47:33.779596'),(27,'examination','0004_auto_20210103_2123','2021-01-03 15:24:03.376131'),(28,'examination','0002_auto_20210103_2207','2021-01-03 16:15:44.873137');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -330,8 +328,40 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('637c8akq2okrqqnsq4rq4w5ouiuor7ph','.eJxVjDsOwyAQRO9CHSGw-W3K9D4DWmAJTiKQjF1FuXtsyUXSjea9mTfzuK3Fb50WPyd2ZSO7_HYB45PqAdID673x2Oq6zIEfCj9p51NL9Lqd7t9BwV72dbTZjE5IHUKOOgvMEKIkaQEkBrQDkTQChlFq5ZSyCYSzZo9gLCoF7PMF5WI2-w:1kuzKf:lisDrwyEK6Oy_YqCfSo3D4-EZ8Ett0Y159PBXJUH-fE','2021-01-14 14:53:41.516835'),('k1uj0y8edm8nffedmwenvsor9hnce63y','.eJxVjEEOwiAQRe_C2pAiQwsu3fcMZJgZpGpoUtqV8e7apAvd_vfef6mI21ri1mSJE6uLMur0uyWkh9Qd8B3rbdY013WZkt4VfdCmx5nleT3cv4OCrXxrG9zgUZhsFuctMJ3FdMmAoy6wGN8nAgGgZAL6HohgyAhOAlnIgdX7A_EDOG8:1kuybu:paJiLohDb-y5aIq7vcgVlvMCd0UBXmuSRzTN7FaANaE','2021-01-14 14:07:26.926875');
+INSERT INTO `django_session` VALUES ('637c8akq2okrqqnsq4rq4w5ouiuor7ph','.eJxVjDsOwyAQRO9CHSGw-W3K9D4DWmAJTiKQjF1FuXtsyUXSjea9mTfzuK3Fb50WPyd2ZSO7_HYB45PqAdID673x2Oq6zIEfCj9p51NL9Lqd7t9BwV72dbTZjE5IHUKOOgvMEKIkaQEkBrQDkTQChlFq5ZSyCYSzZo9gLCoF7PMF5WI2-w:1kuzKf:lisDrwyEK6Oy_YqCfSo3D4-EZ8Ett0Y159PBXJUH-fE','2021-01-14 14:53:41.516835'),('i29ckji7ple514ou1v0ect8o7y5hf1nm','.eJxVjDsOwyAQRO9CHSGw-W3K9D4DWmAJTiKQjF1FuXtsyUXSjea9mTfzuK3Fb50WPyd2ZSO7_HYB45PqAdID673x2Oq6zIEfCj9p51NL9Lqd7t9BwV72dbTZjE5IHUKOOgvMEKIkaQEkBrQDkTQChlFq5ZSyCYSzZo9gLCoF7PMF5WI2-w:1kw4bj:386SE5tw7k8BKdXYhqA49YDPDFFSK-2NrSvC7yDkECQ','2021-01-17 14:43:47.787556'),('k1uj0y8edm8nffedmwenvsor9hnce63y','.eJxVjEEOwiAQRe_C2pAiQwsu3fcMZJgZpGpoUtqV8e7apAvd_vfef6mI21ri1mSJE6uLMur0uyWkh9Qd8B3rbdY013WZkt4VfdCmx5nleT3cv4OCrXxrG9zgUZhsFuctMJ3FdMmAoy6wGN8nAgGgZAL6HohgyAhOAlnIgdX7A_EDOG8:1kuybu:paJiLohDb-y5aIq7vcgVlvMCd0UBXmuSRzTN7FaANaE','2021-01-14 14:07:26.926875');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `examination_question`
+--
+
+DROP TABLE IF EXISTS `examination_question`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `examination_question` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `instruction` longtext,
+  `question` varchar(100) NOT NULL,
+  `Class` varchar(10) DEFAULT NULL,
+  `subject` varchar(100) NOT NULL,
+  `chapter` varchar(100) DEFAULT NULL,
+  `created` datetime(6) NOT NULL,
+  `author` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `examination_question_created_2cf026d6` (`created`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `examination_question`
+--
+
+LOCK TABLES `examination_question` WRITE;
+/*!40000 ALTER TABLE `examination_question` DISABLE KEYS */;
+INSERT INTO `examination_question` VALUES (4,'পদার্থের গঠন | The structure of matter','Best of luck','question/sample.pdf','S.S.C','Science','2','2021-01-03 17:13:38.900722','kamruzzaman leeon');
+/*!40000 ALTER TABLE `examination_question` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -459,4 +489,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-31 21:46:29
+-- Dump completed on 2021-01-03 23:15:44
